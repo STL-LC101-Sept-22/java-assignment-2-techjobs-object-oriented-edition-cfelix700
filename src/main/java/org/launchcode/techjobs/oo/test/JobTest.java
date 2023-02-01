@@ -63,7 +63,7 @@ public class JobTest {
         Location location = new Location("Desert");
         PositionType positionType = new PositionType("Quality Control");
         CoreCompetency coreCompetency = new CoreCompetency("Persistence");
-        Job job = new Job(1, "Product tester", employer, location, positionType, coreCompetency);
+//        Job job = new Job(1, "Product tester", employer, location, positionType, coreCompetency);
 
         String jobString = job.toString();
 
