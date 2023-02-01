@@ -31,6 +31,9 @@ public class Job {
        this.id = 1;
     }
 
+
+
+
     // TODO: Add custom equals and hashCode methods. Consider two Job objects "equal" when their id fields
     //  match.
 
@@ -96,5 +99,39 @@ public class Job {
     }
 
     public void setId(int i) {
+    }
+
+    @Override
+    public String toString() {
+        String jobString = "\n";
+        if (id == 0 && name == null && employer == null && location == null && positionType == null && coreCompetency == null){
+            return "OOPS! This job does not seem to exist,";
+        } else {
+            if (id != 0){
+                jobString += "Job ID: " + id + "\n";
+            } if (name != null){
+                jobString += "Name: " + name + "\n";
+            } else {
+                jobString += "Name: Data not available\n";
+            } if (employer != null){
+                jobString += "Employer: " + employer + "\n";
+            } else {
+                jobString += "Employer: Data not available\n";
+            } if (location != null){
+                jobString += "Location: " + location + "\n";
+            } else {
+                jobString += "Location: Data not available\n";
+            } if (positionType != null){
+                jobString += "Position Type: " + positionType + "\n";
+            } else {
+                jobString += "Position Type: Data not available\n";
+            } if (coreCompetency != null){
+                jobString += "Core Competency: " + coreCompetency + "\n";
+            } else {
+                jobString += "Core Competency: Data not available\n";
+            }
+            return jobString + "\n";
+        }
+
     }
 }
