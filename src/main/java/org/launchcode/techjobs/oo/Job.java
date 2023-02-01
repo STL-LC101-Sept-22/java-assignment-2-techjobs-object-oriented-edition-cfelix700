@@ -94,4 +94,7 @@ public class Job {
     public int getId() {
         return id;
     }
+
+    public void setId(int i) {
+    }
 }
