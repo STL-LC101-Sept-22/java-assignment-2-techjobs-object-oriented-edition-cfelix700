@@ -22,13 +22,16 @@ public class Job {
         nextId++;
     }
 
+
+
     public Job(String name, Employer employer, Location location, PositionType positionType, CoreCompetency coreCompetency){
-       this.name = name;
+        this();
+        this.name = name;
        this.employer = employer;
        this.location = location;
        this.positionType = positionType;
        this.coreCompetency = coreCompetency;
-       this.id = 1;
+
     }
 
 
@@ -109,24 +112,24 @@ public class Job {
         } else {
             if (id != 0){
                 jobString += "Job ID: " + id + "\n";
-            } if (name != null){
+            } if (name != ""){
                 jobString += "Name: " + name + "\n";
             } else {
                 jobString += "Name: Data not available\n";
-            } if (employer != null){
-                jobString += "Employer: " + employer + "\n";
+            } if (employer.getValue() != ""){
+                jobString += "Employer: " + employer.getValue() + "\n";
             } else {
                 jobString += "Employer: Data not available\n";
-            } if (location != null){
-                jobString += "Location: " + location + "\n";
+            } if (location.getValue() != ""){
+                jobString += "Location: " + location.getValue() + "\n";
             } else {
                 jobString += "Location: Data not available\n";
-            } if (positionType != null){
-                jobString += "Position Type: " + positionType + "\n";
+            } if (positionType.getValue() != ""){
+                jobString += "Position Type: " + positionType.getValue() + "\n";
             } else {
                 jobString += "Position Type: Data not available\n";
-            } if (coreCompetency != null){
-                jobString += "Core Competency: " + coreCompetency + "\n";
+            } if (coreCompetency.getValue() != ""){
+                jobString += "Core Competency: " + coreCompetency.getValue() + "\n";
             } else {
                 jobString += "Core Competency: Data not available\n";
             }

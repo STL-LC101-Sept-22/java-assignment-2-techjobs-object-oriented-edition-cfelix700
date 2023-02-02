@@ -59,15 +59,11 @@ public class JobTest {
     @Test
     public void testToStringContainsCorrectLabelsAndData(){
 
-        Employer employer = new Employer("ACME");
-        Location location = new Location("Desert");
-        PositionType positionType = new PositionType("Quality Control");
-        CoreCompetency coreCompetency = new CoreCompetency("Persistence");
-//        Job job = new Job(1, "Product tester", employer, location, positionType, coreCompetency);
+        Job job = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality Control"), new CoreCompetency("Persistence"));
 
         String jobString = job.toString();
 
-        assertTrue(jobString.contains("Job ID: 1"));
+        assertTrue(jobString.contains("Job ID: 4"));
         assertTrue(jobString.contains("Name: Product tester"));
         assertTrue(jobString.contains("Employer: ACME"));
         assertTrue(jobString.contains("Location: Desert"));
@@ -77,14 +73,14 @@ public class JobTest {
 
     @Test
     public void testToStringHandlesEmptyField(){
-        Job job = new Job();
+        Job job = new Job("", new Employer(""), new Location(""), new PositionType(""), new CoreCompetency(""));
         String jobString = job.toString();
 
-        assertTrue(jobString.contains("Job ID: Data not available"));
+        assertTrue(jobString.contains("Job ID: 3"));
         assertTrue(jobString.contains("Name: Data not available"));
         assertTrue(jobString.contains("Employer: Data not available"));
         assertTrue(jobString.contains("Location: Data not available"));
-        assertTrue(jobString.contains("Position: Data not available"));
+        assertTrue(jobString.contains("Position Type: Data not available"));
         assertTrue(jobString.contains("Core Competency: Data not available"));
     }
 
