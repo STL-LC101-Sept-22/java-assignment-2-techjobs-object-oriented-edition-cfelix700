@@ -39,11 +39,11 @@ public class JobTest {
         Job job1 = new Job("Product tester", new Employer("ACME"), new Location("Desert") , new PositionType("Quality Control"), new CoreCompetency("Persistence"));
         Job job2 = new Job("Product tester", new Employer("ACME"), new Location("Desert") , new PositionType("Quality Control"), new CoreCompetency("Persistence"));
 
-//        Set different IDs for each job
+
         job1.setId(1);
         job2.setId(2);
 
-//        Verify that the two jobs are NOT equal
+
         assertFalse(job1.equals(job2));
     }
 
