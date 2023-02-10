@@ -3,21 +3,29 @@ package org.launchcode.techjobs.oo;
 import java.util.Objects;
 
 public class Employer extends JobField{
-    public Employer(){}
+
+    private int id;
+    private static int nextId = 1;
+    private String value;
+
+
     public Employer(String value) {
-            super(value);
+
+        super(value);
+    }
+          public Employer() {
+            id = nextId;
+            nextId++;
+        }
         }
 
-}
+
 
 //    private int id;
 //    private static int nextId = 1;
 //    private String value;
 //
-//    public Employer() {
-//        id = nextId;
-//        nextId++;
-//    }
+
 //
 //    public Employer(String value) {
 //        this();
